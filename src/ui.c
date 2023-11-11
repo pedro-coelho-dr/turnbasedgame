@@ -7,7 +7,7 @@
 
 void pressEnterToStart(void) {
     int c;
-    printf("PRESS ENTER TO START");
+    printf("\n                       PRESS ENTER TO START");
     while ((c=getchar()) != '\n' && c!=EOF);
 }
 
