@@ -10,6 +10,11 @@ typedef enum{
     ELECTRIC,
 } Type;
 
+typedef enum {
+    ALIVE,
+    DEAD
+} Status;
+
 typedef struct Attack {
     char name[50];
     int damage;
@@ -19,6 +24,7 @@ typedef struct Attack {
 typedef struct Character {
     char name[50];
     int health;
+    Status status;
     Type type;
     Type immunity;
     Type resistances[2];
@@ -31,6 +37,7 @@ typedef struct Player {
     char name[50];
     Character characters[3];
     int currentCharacter;
+    int switchCount;
 } Player;
 
 

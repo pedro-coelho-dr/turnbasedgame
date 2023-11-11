@@ -3,6 +3,13 @@
 
 #include "../include/character.h"
 
+// Funções necessárias
+// Calcular o dano
+// Causar o ataque
+// Selecionar ataque
+// trocar personagem
+// status do personagem(se está vivo ou morto)
+// display do personagem o HP e o status podem ir no UI...
 
 
 
@@ -45,7 +52,7 @@ const Character bulbasaur = {
     .weakness = FIRE,
     .attacks = {
         {.name = "Vine Whip", .damage = 20, .type = POISON},
-        {.name = "Nature´s Gift", .damage = 15, .type = MAGICAL},
+        {.name = "Nature Gift", .damage = 15, .type = MAGICAL},
         {.name = "Razor Leaf", .damage = 40, .type = POISON}
     }
 };

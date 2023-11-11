@@ -8,3 +8,4 @@
 
 //void updateRanking(Player *winner);
 //void displayRanking();
+// colocar a parte referente a ordenação para display no linked_list.c

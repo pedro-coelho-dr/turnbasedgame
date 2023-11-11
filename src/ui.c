@@ -15,3 +15,4 @@ void getPlayerName(Player *player) {
     fgets(player->name, sizeof(player->name), stdin);
     player->name[strcspn(player->name, "\n")] = '\0';
 }
+

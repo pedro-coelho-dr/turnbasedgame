@@ -17,11 +17,16 @@ int main() {
     pressEnterToStart();
     clear();
 
+    //Menu de ver personagens
+
     Player player1 = {0};
     Player player2 = {0};
+
     //displayRanking();
+
     printf("\nPlayer 1: ");
     getPlayerName(&player1);
+    
 // pega todas as infos do player 1
 
     clear();
