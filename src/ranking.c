@@ -6,5 +6,5 @@
 
 
 
-void updateRanking(Player *winner);
-void displayRanking();
+//void updateRanking(Player *winner);
+//void displayRanking();

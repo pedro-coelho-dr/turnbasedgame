@@ -2,8 +2,8 @@
 #define RANKING_H
 
 
-void updateRanking(Player *winner);
-void displayRanking();
+//void updateRanking(Player *winner);
+//void displayRanking();
 
 
 #endif
