@@ -89,6 +89,8 @@ const Character rattata = {
     }
 };
 
+// FUNCTIONS
+
 const char* getType(Type type) {
     switch (type) {
         case ELECTRIC: return "Electric";

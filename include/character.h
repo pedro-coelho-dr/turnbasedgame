@@ -38,6 +38,7 @@ typedef struct Player {
     Character characters[3];
     int currentCharacter;
     int switchCount;
+    int initiativeChoice;
 } Player;
 
 

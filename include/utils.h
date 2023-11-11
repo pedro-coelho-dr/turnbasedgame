@@ -2,5 +2,6 @@
 #define UTILS_H
 
 void clear();
+int randomInitiative();
 
 #endif

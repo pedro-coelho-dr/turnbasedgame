@@ -12,49 +12,48 @@
 
 int main() {
 
-
     clear();
     displayLogo();
     pressEnterToStart();
 
-    //initialize characters
     CharacterNode *characterList = NULL;
     initializeCharacterList(&characterList);
 
-    //PLAYER 1
-        //initialize player1
     Player player1 = {0};
     player1.switchCount=0;
-
-        //player 1 name
     clear();
     //displayRanking();
     printf("\nPlayer 1: ");
     getPlayerName(&player1);
-
-        //choose characters
     clear();
     displayCharacterList(characterList);
     selectCharacters(&player1, characterList);
-    //PLAYER2
-        //initialize player2
+    clear();
+    askInitiative(&player1);
+
     Player player2 = {0};
     player2.switchCount=0;
-
-        //player 2 name
     clear();
     //displayRanking();
     printf("\nPlayer 2: ");
     getPlayerName(&player2);
-
-        //choose characters
     clear();
     displayCharacterList(characterList);
     selectCharacters(&player2, characterList);
-
-
+    clear();
+    askInitiative(&player2);
 
     freeCharacterList(characterList);
+
+    int firstPlayer = determineInitiative(&player1, &player2);
+    if (firstPlayer == 1) {
+     //   startCombat(&player1, &player2);
+    } else {
+      //  startCombat(&player2, &player1);
+    }
+
+    
+
 
 
 // inicia o combate
@@ -67,5 +66,6 @@ int main() {
     //displayGameOver();
     //displayCredits
 
+    return 0;
 
 }

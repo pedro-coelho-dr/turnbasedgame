@@ -74,3 +74,16 @@ void selectCharacters(Player *player, CharacterNode *head) {
         } while (true);
     }
 }
+
+void askInitiative(Player *player) {
+    do {
+        printf("Do you want to choose your pokemon first or wait for the opponent?\n1 - First\n2 - Wait\n>>> ");
+        if (scanf("%d", &player->initiativeChoice) != 1 || 
+                (player->initiativeChoice != 1 && player->initiativeChoice != 2)) {
+            printf("[INVALID] 1 for first, 2 to wait...\n");
+            while (getchar() != '\n'); 
+        } else {
+            break;
+        }
+    } while (true);
+}
