@@ -3,17 +3,6 @@
 
 #include "../include/character.h"
 
-// Funções necessárias
-// Calcular o dano
-// Causar o ataque
-// Selecionar ataque
-// trocar personagem
-// status do personagem(se está vivo ou morto)
-// display do personagem o HP e o status podem ir no UI...
-
-
-
-
 // PREDEFINED CHARACTERS
 const Character charmander = {
     .name = "Charmander",
@@ -99,3 +88,15 @@ const Character rattata = {
         {.name = "Hyper Fang", .damage = 40, .type = PHYSICAL}
     }
 };
+
+const char* getType(Type type) {
+    switch (type) {
+        case ELECTRIC: return "Electric";
+        case FIRE: return "Fire";
+        case MAGICAL: return "Magical";
+        case PHYSICAL: return "Physical";
+        case POISON: return "Poison";
+        case WATER: return "Water";
+        default: return "Error";
+    }
+}

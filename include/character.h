@@ -2,12 +2,12 @@
 #define CHARACTER_H
 
 typedef enum{
-    PHYSICAL,
-    MAGICAL,
-    FIRE,
-    WATER,
-    POISON,
     ELECTRIC,
+    FIRE,
+    MAGICAL,
+    PHYSICAL,
+    POISON,
+    WATER,
 } Type;
 
 typedef enum {
@@ -49,5 +49,9 @@ extern const Character bulbasaur;
 extern const Character pikachu;
 extern const Character jigglypuff;
 extern const Character rattata;
+
+// FUNCTIONS
+
+const char* getType(Type type);
 
 #endif

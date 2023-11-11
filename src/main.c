@@ -7,6 +7,7 @@
 #include "../include/combat.h"
 #include "../include/assets.h"
 #include "../include/utils.h"
+#include "../include/linked_list.h"
 
 
 int main() {
@@ -15,25 +16,45 @@ int main() {
     clear();
     displayLogo();
     pressEnterToStart();
-    clear();
 
-    //Menu de ver personagens
+    //initialize characters
+    CharacterNode *characterList = NULL;
+    initializeCharacterList(&characterList);
 
+    //PLAYER 1
+        //initialize player1
     Player player1 = {0};
-    Player player2 = {0};
+    player1.switchCount=0;
 
+        //player 1 name
+    clear();
     //displayRanking();
-
     printf("\nPlayer 1: ");
     getPlayerName(&player1);
-    
-// pega todas as infos do player 1
 
+        //choose characters
+    clear();
+    displayCharacterList(characterList);
+    selectCharacters(&player1, characterList);
+    //PLAYER2
+        //initialize player2
+    Player player2 = {0};
+    player2.switchCount=0;
+
+        //player 2 name
     clear();
     //displayRanking();
     printf("\nPlayer 2: ");
     getPlayerName(&player2);
-// pega todas as infos do player 2
+
+        //choose characters
+    clear();
+    displayCharacterList(characterList);
+    selectCharacters(&player2, characterList);
+
+
+
+    freeCharacterList(characterList);
 
 
 // inicia o combate
