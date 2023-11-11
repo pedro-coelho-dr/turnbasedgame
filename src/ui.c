@@ -10,10 +10,14 @@
 void pressEnterToStart(void) {
     int c;
     printf("\n                       PRESS ENTER TO START");
-    while ((c=getchar()) != '\n' && c!=EOF);
+    do {
+        c = getchar();
+    } while (c != '\n' && c != EOF);
 }
 
 void getPlayerName(Player *player) {
+/*     int c;
+    while ((c = getchar()) != '\n' && c != EOF) {} */
     fgets(player->name, sizeof(player->name), stdin);
     player->name[strcspn(player->name, "\n")] = '\0';
 }
@@ -52,7 +56,7 @@ void selectCharacters(Player *player, CharacterNode *head) {
     printf("Select 3 pokemons.\n");
     for (int i=0; i<3; i++) {
         do {
-            printf("Select character %d: ", i+1);
+            printf("Select pokemon %d: ", i+1);
             scanf("%d", &choice);
             while (getchar() != '\n');
             if (choice<1 || choice>numCharacters) {
@@ -83,6 +87,7 @@ void askInitiative(Player *player) {
             printf("[INVALID] 1 for first, 2 to wait...\n");
             while (getchar() != '\n'); 
         } else {
+            while (getchar() != '\n');
             break;
         }
     } while (true);

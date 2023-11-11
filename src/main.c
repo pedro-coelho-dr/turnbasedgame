@@ -43,6 +43,10 @@ int main() {
     clear();
     askInitiative(&player2);
 
+    printPlayer(&player1);
+    printPlayer(&player2);
+    printCharacterList(characterList);
+
     freeCharacterList(characterList);
 
     int firstPlayer = determineInitiative(&player1, &player2);
