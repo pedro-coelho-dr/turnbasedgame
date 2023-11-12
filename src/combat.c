@@ -90,6 +90,7 @@ void attack(Character *defender, Attack *chosenAttack) {
     if (defender->health <= 0) {
         defender->health = 0;
     }
+        printCharacterArt(defender->name);
 }
 
 

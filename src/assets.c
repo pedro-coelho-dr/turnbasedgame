@@ -60,7 +60,7 @@ void printCharacterArt(const char* characterName) {
         printf("   _,-_    '       `.     .'      ,\\\n");
         printf("   -\" /`.         _,'     | _  _  _.|\n");
         printf("    \"\"--'---\"\"\"\"\"'        `' '! |! /\n");
-        printf("                            `\" \" -' mh\n");
+        printf("                            `\" \" -'\n");
         printf("\n");
         printf("\n");
     } else if (strcmp(characterName, "Squirtle") == 0) {
@@ -96,7 +96,7 @@ void printCharacterArt(const char* characterName) {
         printf("                \\          \\      |          |\n");
         printf("               ,'           )     `.         |\n");
         printf("                7____,,..--'      /          |\n");
-        printf("                                  `---.__,--.'mh\n");
+        printf("                                  `---.__,--.'\n");
     } else if (strcmp(characterName, "Bulbasaur") == 0) {
          printf("                                           /\n");
         printf("                        _,.------....___,.' ',.-.\n");
@@ -125,7 +125,7 @@ void printCharacterArt(const char* characterName) {
         printf("  | `._.'    `,_            ;  /         ,'          .\n");
         printf(" .'          /| `-.        . ,'         ,           ,\n");
         printf(" '-.__ __ _,','    '`-..___;-...__   ,.'\\ ____.___.'\n");
-        printf(" `\"^--'..'   '-`-^-'\"--    `-^-'`.''\"\"\"\"\"`.,^.`.--' mh\n");
+        printf(" `\"^--'..'   '-`-^-'\"--    `-^-'`.''\"\"\"\"\"`.,^.`.--'\n");
         printf("\n");
         printf("\n");
 
@@ -173,7 +173,7 @@ void printCharacterArt(const char* characterName) {
         printf("                   .'         /\n");
         printf("                 .'          /\n");
         printf("               ,'           /\n");
-        printf("             _'....----\"\"\"\"\" mh\n");
+        printf("             _'....----\"\"\"\"\"\n");
     } else if (strcmp(characterName, "Jigglypuff") == 0) {
         printf("   ,..__\n");
         printf("  |  _  `--._                                  _.--\"\"\"`.\n");
@@ -207,7 +207,7 @@ void printCharacterArt(const char* characterName) {
         printf(" /             _,' `\"-..___     _,..--\"`.            `.\n");
         printf("|         _,.-'            `\"\"\"'         `-._          \\\n");
         printf("`-....---'                                   `-.._      |\n");
-        printf("                                                  `--...' mh\n");
+        printf("                                                  `--...'\n");
     } else if (strcmp(characterName, "Rattata") == 0) {
         printf("                                      ,'\"\"`--.\n");
         printf("                                     |     __ `-.\n");
@@ -243,7 +243,7 @@ void printCharacterArt(const char* characterName) {
         printf("                           __.'\"`.    /                 `-' | _,L,'\n");
         printf("                         .',      `\"\"'                      '/,--\n");
         printf("                          / _..' _,,'\n");
-        printf("                          ,' `-\"' mh\n");
+        printf("                          ,' `-\"'\n");
         }
 
 }

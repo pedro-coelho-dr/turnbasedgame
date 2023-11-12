@@ -107,12 +107,9 @@ void actionMenu(Player *currentPlayer, Player *opponentPlayer) {
     }
 
     printf("\n--------------\n");
-    printCharacterArt(opponentPlayer->characters[opponentPlayer->currentCharacter].name);
     printf("\nInimigo: %s (VIDA: %d)\n", opponentPlayer->characters[opponentPlayer->currentCharacter].name, opponentPlayer->characters[opponentPlayer->currentCharacter].health);
-    printCharacterArt(currentPlayer->characters[currentPlayer->currentCharacter].name);
-     printf("\n\n# %s #\n", currentPlayer->name);
+    printf("\n\n# %s #\n", currentPlayer->name);
     printf("\n*%s (VIDA: %d)*", currentPlayer->characters[currentPlayer->currentCharacter].name, currentPlayer->characters[currentPlayer->currentCharacter].health);
-
 
     if (currentPlayer->characters[currentPlayer->currentCharacter].health <= 0) {
         printf("\n\n%s desmaiou!\n", currentPlayer->characters[currentPlayer->currentCharacter].name);
@@ -174,7 +171,7 @@ void attackMenu(Player *currentPlayer, Player *opponentPlayer) {
     if (choice==3) {
         attackingCharacter->specialAttack = 0;
     }
-
+    printCharacterArt(currentPlayer->characters[currentPlayer->currentCharacter].name);
     printf("%s usou %s!\n", currentPlayer->characters[currentPlayer->currentCharacter].name, attackingCharacter->attacks[choice-1].name);
     attack(&opponentPlayer->characters[opponentPlayer->currentCharacter], &attackingCharacter->attacks[choice-1]);
 }
