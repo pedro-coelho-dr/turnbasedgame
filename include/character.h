@@ -10,11 +10,6 @@ typedef enum{
     WATER,
 } Type;
 
-typedef enum {
-    ALIVE,
-    DEAD
-} Status;
-
 typedef struct Attack {
     char name[50];
     int damage;
@@ -24,7 +19,7 @@ typedef struct Attack {
 typedef struct Character {
     char name[50];
     int health;
-    Status status;
+    int specialAttack;
     Type type;
     Type immunity;
     Type resistances[2];

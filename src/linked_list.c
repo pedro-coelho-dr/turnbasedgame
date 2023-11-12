@@ -55,8 +55,6 @@ void freeCharacterList(CharacterNode *head) {
 }
 
 
-
-
 // COMBAT LIST
 
 TurnNode* createCircularList(Player *firstPlayer, Player *secondPlayer) {

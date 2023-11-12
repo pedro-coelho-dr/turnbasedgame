@@ -1,34 +1,96 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 
 #include "../include/combat.h"
 #include "../include/character.h"
 #include "../include/linked_list.h"
 #include "../include/utils.h"
-
-#define MAX_SWITCHES 3
+#include "../include/ui.h"
 
 int determineInitiative(Player *player1, Player *player2) {
     if (player1->initiativeChoice == player2->initiativeChoice) {
         return randomInitiative();
-    return (player1->initiativeChoice == 1) ? 1 : 2;
+    } else {
+        return (player1->initiativeChoice==1) ? 1 : 2;
     }
 }
 
+Player* startCombat(Player *player1, Player *player2) {
 
+    displayStartCombat();
 
-// Após decidir a iniciativa, os jogadores sao postos em uma lista circular,
-// Haverá um loop principal que checa se o jogo acabou
-// (se todos os pokemons de um player morreram)
-// senao ele chama a funcao do turno (que termina passando pro proximo turno)
-// e ao concluir a ação de atacar ou trocar, a lista gira
-// volta pro loop principal -- vê se a luta acabou
-// chama novamente a funcao do turno, e assim segue...
-// pra troca/ataque tem que checar os pokemons vivos
+    chooseCharacter(player1);
+    printf("\n--------------\n");
+    chooseCharacter(player2);
 
+    TurnNode *turn = createCircularList(player1, player2);
 
-// loop principal (retorna com o Player winner)
-// fim do jogo (pro loop principal parar)
+    Player* winner = combatLoop(turn);
+
+    free(turn->next);
+    free(turn);
+
+    return winner;
+}
+
+Player* combatLoop(TurnNode *turn) {
+    while (true) {
+        Player *currentPlayer = turn->player;
+        Player *opponentPlayer = turn->next->player;
+
+        actionMenu(currentPlayer, opponentPlayer);
+
+        if(isDefeated(opponentPlayer)){
+            return currentPlayer;
+        }
+        turn = turn->next;
+    }
+}
+
+bool isDefeated(Player *player) {
+    for (int i=0; i<3; i++) {
+        if (player->characters[i].health > 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void attack(Character *defender, Attack *chosenAttack) {
+    float damageMultiplier = 1.0f;
+
+    if (defender->immunity==chosenAttack->type) {
+        printf("\n\n%s e imune a ataque do tipo %s!\n", defender->name, getType(chosenAttack->type));
+        damageMultiplier = 0;
+    }
+
+    for (int i = 0; i < 2; i++) {
+        if (defender->resistances[i]==chosenAttack->type) {
+            printf("\n\n%s tem resistencia a ataque do tipo %s!\n", defender->name, getType(chosenAttack->type));
+            damageMultiplier = 0.5f;
+            break;
+        }
+    }
+
+    if (defender->weakness==chosenAttack->type) {
+        printf("\n\n%s e vuneravel a ataque do tipo %s!\n", defender->name, getType(chosenAttack->type));
+        damageMultiplier *= 2.0f;
+    }
+
+    int damage = (int)(chosenAttack->damage*damageMultiplier);
+    defender->health -= damage;
+
+    if (damageMultiplier>0) {
+        printf("\n\n%s recebeu %d de dano!\n", defender->name, damage);
+    } else {
+        printf("\n\n%s não sentiu nenhum efeito!\n", defender->name);
+    }
+    if (defender->health <= 0) {
+        defender->health = 0;
+    }
+}
 
 
 

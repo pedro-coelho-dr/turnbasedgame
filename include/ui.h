@@ -9,5 +9,8 @@ void getPlayerName(Player *player);
 void displayCharacterList(CharacterNode *head);
 void selectCharacters(Player *player, CharacterNode *head);
 void askInitiative(Player *player);
+void actionMenu(Player *currentPlayer, Player *opponentPlayer);
+void attackMenu(Player *currentPlayer, Player *opponentPlayer);
+void chooseCharacter(Player *player);
 
 #endif

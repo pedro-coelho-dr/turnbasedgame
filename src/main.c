@@ -16,14 +16,17 @@ int main() {
     displayLogo();
     pressEnterToStart();
 
+//CHARACTERS INIT
     CharacterNode *characterList = NULL;
     initializeCharacterList(&characterList);
 
+//PLAYER 1
     Player player1 = {0};
     player1.switchCount=0;
+    player1.currentCharacter = -1;
     clear();
     //displayRanking();
-    printf("\nPlayer 1: ");
+    printf("\n[JOGADOR 1] \n\n>>> ");
     getPlayerName(&player1);
     clear();
     displayCharacterList(characterList);
@@ -31,45 +34,40 @@ int main() {
     clear();
     askInitiative(&player1);
 
+//PLAYER 2
     Player player2 = {0};
     player2.switchCount=0;
+    player2.currentCharacter = -1;
     clear();
     //displayRanking();
-    printf("\nPlayer 2: ");
+    printf("\n[JOGADOR 2]\n\n>>> ");
     getPlayerName(&player2);
     clear();
     displayCharacterList(characterList);
     selectCharacters(&player2, characterList);
     clear();
     askInitiative(&player2);
-
-    printPlayer(&player1);
-    printPlayer(&player2);
-    printCharacterList(characterList);
-
+//TESTES
+    //printPlayer(&player1);
+    //printPlayer(&player2);
+    //printCharacterList(characterList);
+    
     freeCharacterList(characterList);
 
+//COMBAT
     int firstPlayer = determineInitiative(&player1, &player2);
+    Player *winner;
     if (firstPlayer == 1) {
-     //   startCombat(&player1, &player2);
+        winner = startCombat(&player1, &player2);
     } else {
-      //  startCombat(&player2, &player1);
+        winner = startCombat(&player2, &player1);
     }
 
-    
+    printf("\n\nO vencedor e %s!\n", winner->name);
 
-
-
-// inicia o combate
-
-// retorna o vencedor
-
-// salva no ranking
-
-    //displayRanking();
-    //displayGameOver();
-    //displayCredits
+   // displayWinner(winner);
+  //  displayRanking();
+  //  displayCredits();
 
     return 0;
-
 }

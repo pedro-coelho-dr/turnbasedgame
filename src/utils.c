@@ -35,7 +35,6 @@ void printPlayer(const Player *player) {
 void printCharacter(const Character *character) {
     printf("Name: %s\n", character->name);
     printf("Health: %d\n", character->health);
-    printf("Status: %s\n", character->status == ALIVE ? "Alive" : "Dead");
     printf("Type: %s\n", getType(character->type));
     printf("Immunity: %s\n", getType(character->immunity));
     printf("Resistances: %s, %s\n", getType(character->resistances[0]), getType(character->resistances[1]));
