@@ -9,13 +9,13 @@
 #include "../include/utils.h"
 #include "../include/ui.h"
 
-int determineInitiative(Player *player1, Player *player2) {
+/* int determineInitiative(Player *player1, Player *player2) {
     if (player1->initiativeChoice == player2->initiativeChoice) {
         return randomInitiative();
     } else {
         return (player1->initiativeChoice==1) ? 1 : 2;
     }
-}
+} */
 
 Player* startCombat(Player *player1, Player *player2) {
 

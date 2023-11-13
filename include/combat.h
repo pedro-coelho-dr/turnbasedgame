@@ -6,7 +6,7 @@
 #include "linked_list.h"
 #include "character.h"
 
-int determineInitiative(Player *player1, Player *player2);
+//int determineInitiative(Player *player1, Player *player2);
 Player* startCombat(Player *player1, Player *player2);
 Player* combatLoop(TurnNode *turn);
 bool isDefeated(Player *player);

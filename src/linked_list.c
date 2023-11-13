@@ -27,7 +27,8 @@ void addCharacterList(CharacterNode **head, Character character) {
         aux = *head;
         while (aux->next != NULL &&
                (aux->next->character.type < character.type ||
-               (aux->next->character.type == character.type && strcmp(aux->next->character.name, character.name) <= 0))) 
+               (aux->next->character.type == character.type 
+               && strcmp(aux->next->character.name, character.name) <= 0))) 
                {
             aux = aux->next;
         }

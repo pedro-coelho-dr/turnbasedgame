@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "../include/main.h"
 #include "../include/ui.h"
@@ -11,6 +12,7 @@
 
 
 int main() {
+    srand((unsigned int)time(NULL));
 
     clear();
     displayLogo();
@@ -32,7 +34,7 @@ int main() {
     displayCharacterList(characterList);
     selectCharacters(&player1, characterList);
     clear();
-    askInitiative(&player1);
+    //askInitiative(&player1);
 
 //PLAYER 2
     Player player2 = {0};
@@ -46,7 +48,7 @@ int main() {
     displayCharacterList(characterList);
     selectCharacters(&player2, characterList);
     clear();
-    askInitiative(&player2);
+    //askInitiative(&player2);
 //TESTES
     //printPlayer(&player1);
     //printPlayer(&player2);
@@ -54,8 +56,9 @@ int main() {
     
     freeCharacterList(characterList);
 
+
 //COMBAT
-    int firstPlayer = determineInitiative(&player1, &player2);
+    int firstPlayer = randomInitiative();
     Player *winner;
     if (firstPlayer == 1) {
         winner = startCombat(&player1, &player2);
@@ -63,7 +66,7 @@ int main() {
         winner = startCombat(&player2, &player1);
     }
 
-    printf("\n\nO vencedor e %s!\n", winner->name);
+    printf("\n\n%s venceu!\n", winner->name);
 
    // displayWinner(winner);
   //  displayRanking();

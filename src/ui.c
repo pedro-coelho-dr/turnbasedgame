@@ -81,7 +81,7 @@ void selectCharacters(Player *player, CharacterNode *head) {
         } while (true);
     }
 }
-
+/* 
 void askInitiative(Player *player) {
     do {
         printf("Você quer escolher seu pokemon primeiro ou esperar pelo seu oponente?\n1 - Primeiro\n2 - Esperar\n>>> ");
@@ -95,7 +95,7 @@ void askInitiative(Player *player) {
         }
     } while (true);
 }
-
+ */
 void actionMenu(Player *currentPlayer, Player *opponentPlayer) {
     int choice;
 

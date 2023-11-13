@@ -15,17 +15,16 @@ void clear() {
 }
 
 int randomInitiative() {
-    srand((unsigned int)time(NULL));
     return (rand() % 2) + 1;
 }
 
 
-// testes
+// TESTES
 void printPlayer(const Player *player) {
     printf("Player Name: %s\n", player->name);
     printf("Current Character: %d\n", player->currentCharacter);
     printf("Switch Count: %d\n", player->switchCount);
-    printf("Initiative Choice: %d\n", player->initiativeChoice);
+   // printf("Initiative Choice: %d\n", player->initiativeChoice);
     printf("Characters:\n");
     for (int i = 0; i < 3; i++) {
         printCharacter(&player->characters[i]);
