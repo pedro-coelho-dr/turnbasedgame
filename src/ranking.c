@@ -40,7 +40,7 @@ void updateRanking(Player *winnerNode) {
         return;
     }
 
-    // Descobre o tamanho atual do arquivo dividindo o tamanho total pelo tamanho de uma estrutura Ranking
+    
     fseek(rankingFile, 0, SEEK_END);
     long fileSize = ftell(rankingFile);
     rewind(rankingFile);
@@ -111,37 +111,54 @@ void displayRanking() {
         return;
     }
 
-    Ranking rankings[10];
-    memset(rankings, 0, sizeof(rankings));  // Inicializa a estrutura
+    fseek(rankingFile, 0, SEEK_END);
+    long fileSize = ftell(rankingFile);
+    rewind(rankingFile);
+    int numElements = fileSize / sizeof(Ranking);
 
-    fread(rankings, sizeof(Ranking), 10, rankingFile);
+    // Usar a estrutura para armazenar apenas as posições que serão exibidas
+    Ranking *rankings = malloc(sizeof(Ranking) * numElements);
 
-    int positionsToDisplay = 1;  // Supondo uma única posição para teste
+    if (rankings == NULL) {
+        fprintf(stderr, "Erro ao alocar memória para rankings.\n");
+        fclose(rankingFile);
+        return;
+    }
+    
+    fread(rankings, sizeof(Ranking), numElements, rankingFile);
+    int maxPositionsToDisplay = (numElements < 10) ? numElements : 10;
+
     int columnWidth = 50;  // Largura total da linha
 
     printf("-------------------------------------------------------------------------------------------\n");
     printf("                                         Ranking\n");
     printf("-------------------------------------------------------------------------------------------\n");
     
-    
-    printf("|    %s\t |","Posição");
+    printf("|    %s\t |", "Posição");
     printCentered("Nome", columnWidth);
     printf("|    %s\t |\n", "Vitórias");
 
-    for (int i = 0; i < positionsToDisplay; i++) {
-         printf("|%*d.\t |", 8, i + 1);
+    for (int i = 0; i < maxPositionsToDisplay; i++) {
+        printf("|%*d.\t |", 8, i + 1);
 
-        
-        printCentered(rankings[i].name, columnWidth);
-        printf("|");
-        printCenteredNumber(rankings[i].totalWins, 17);  // Largura 11 para acomodar "Vitórias"
-        printf(" \t |\n");
+        if (i < numElements) {
+            printCentered(rankings[i].name, columnWidth);
+            printf("|");
+            printCenteredNumber(rankings[i].totalWins, 17);  // Largura 11 para acomodar "Vitórias"
+            printf(" \t |\n");
+        } else {
+            break;
+        }
     }
+
+    free(rankings);
 
     if (fclose(rankingFile) != 0) {
         fprintf(stderr, "Erro ao fechar o arquivo.\n");
     }
 }
+
+
 
 
 
