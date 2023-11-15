@@ -7,8 +7,12 @@
 void printCentered(char *str, int width) {
     int len = strlen(str);
     int spaces = (width - len) / 2;
-    printf("%*s%-*s", spaces, "", width - spaces, str);
+    int leftPadding = spaces;
+    int rightPadding = spaces + (width - len) % 2;
+
+    printf("%*s%-*s%*s", leftPadding, "", len, str, rightPadding, "");
 }
+
 
 void printCenteredNumber(int number, int width) {
     char numStr[3];  
@@ -144,7 +148,7 @@ void displayRanking() {
         if (i < numElements) {
             printCentered(rankings[i].name, columnWidth);
             printf("|");
-            printCenteredNumber(rankings[i].totalWins, 17);  // Largura 11 para acomodar "Vitórias"
+            printCenteredNumber(rankings[i].totalWins, 17);  
             printf(" \t |\n");
         } else {
             break;
