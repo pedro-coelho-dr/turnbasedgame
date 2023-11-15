@@ -59,7 +59,7 @@ int main() {
 
 //COMBAT
     int firstPlayer = randomInitiative();
-    Player *winner 
+    Player *winner;
     if (firstPlayer == 1) {
         winner = startCombat(&player1, &player2);
     } else {
