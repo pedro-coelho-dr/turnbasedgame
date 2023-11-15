@@ -59,17 +59,18 @@ int main() {
 
 //COMBAT
     int firstPlayer = randomInitiative();
-    Player *winner;
+    Player *winner = &player1;
     if (firstPlayer == 1) {
         winner = startCombat(&player1, &player2);
     } else {
         winner = startCombat(&player2, &player1);
     }
-
+    clear();
     printf("\n\n%s venceu!\n", winner->name);
 
-   // displayWinner(winner);
-  //  displayRanking();
+    updateRanking(winner); 
+    displayRanking(); 
+
   //  displayCredits();
 
     return 0;
