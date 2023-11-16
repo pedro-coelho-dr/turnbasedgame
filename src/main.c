@@ -3,7 +3,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#include "../include/main.h"
+
 #include "../include/ui.h"
 #include "../include/character.h"
 #include "../include/combat.h"
