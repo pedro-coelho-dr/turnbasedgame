@@ -12,7 +12,7 @@
 
 void pressEnterToStart(void) {
     int c;
-    printf("\n                       [PRESS ENTER TO START]");
+    printf("\n                                 [PRESS ENTER TO START]");
     do {
         c = getchar();
     } while (c != '\n' && c != EOF);

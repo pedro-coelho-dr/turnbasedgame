@@ -135,7 +135,7 @@ void displayRanking() {
     int columnWidth = 50;  // Largura total da linha
 
     printf("-------------------------------------------------------------------------------------------\n");
-    printf("                                         Ranking\n");
+    printf("                                      Hall of Fame\n");
     printf("-------------------------------------------------------------------------------------------\n");
     
     printf("|    %s\t |", "Posição");
@@ -150,10 +150,13 @@ void displayRanking() {
             printf("|");
             printCenteredNumber(rankings[i].totalWins, 17);  
             printf(" \t |\n");
+            
         } else {
             break;
         }
     }
+
+    printf("\n\n\n\n\n");
 
     free(rankings);
 

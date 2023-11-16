@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "../include/main.h"
 #include "../include/ui.h"
@@ -16,7 +17,10 @@ int main() {
 
     clear();
     displayLogo();
+    printf("\n\n\n");
+    displayRanking(); 
     pressEnterToStart();
+    
 
 //CHARACTERS INIT
     CharacterNode *characterList = NULL;
@@ -66,12 +70,12 @@ int main() {
         winner = startCombat(&player2, &player1);
     }
     clear();
-    printf("\n\n%s venceu!\n", winner->name);
-
     updateRanking(winner); 
+    vencedor(winner);
+    sleep(4);
     displayRanking(); 
-
-  //  displayCredits();
+    sleep(2);
+    displayCredits();
 
     return 0;
 }

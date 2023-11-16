@@ -51,3 +51,27 @@ void printCharacterList(const CharacterNode *head) {
         current = current->next;
     }
 }
+
+void vencedor(Player *winnerNode){
+    clear();
+    displayLogo();
+    printCharacterArt(winnerNode->characters[0].name);
+    printf("\n\n\n\n                             ***********************************\n");
+    printf("                                 %s, you`re the winner!!\n", winnerNode->name);
+    printf("                               Congratulations on your journey.\n");
+    printf("                                 You're on the right track!\n");
+    printf("                              ***********************************\n\n\n\n\n");
+
+    
+}
+
+void displayCredits(){
+        printf("                                       - THE END - \n");
+        printf("                                     TURN BASED GAME\n");
+        printf("                                    POKÉMON INSPIRED\n\n");
+        printf("                                       Cesar School\n");
+        printf("                 Projeto para a disciplina de Algoritimo e Estrutura de dados\n");
+        printf("                                  Professora Natasha Targino\n");
+        printf("                         Alunos: Camila Cirne e Pedro Coelho\n\n\n");
+
+}
