@@ -12,5 +12,7 @@ void selectCharacters(Player *player, CharacterNode *head);
 void actionMenu(Player *currentPlayer, Player *opponentPlayer);
 void attackMenu(Player *currentPlayer, Player *opponentPlayer);
 void chooseCharacter(Player *player);
+void printCentered(char *str, int width);
+void printCenteredNumber(int number, int width);
 
 #endif

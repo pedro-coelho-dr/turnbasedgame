@@ -5,9 +5,6 @@
 #include "../include/linked_list.h"
 #include "../include/character.h"
 
-// UI: criar character node para ordenar os pokemons para a escolha, OK
-// COMBAT: criar o player node da lista circular, 
-// UI: criar ranking node para ordenar o ranking
 
 // CHARACTER LIST
 void addCharacterList(CharacterNode **head, Character character) {
@@ -71,7 +68,7 @@ TurnNode* createCircularList(Player *firstPlayer, Player *secondPlayer) {
     return player1Node;
 }
 
-// DAR FREE NOS TURN NODES
-// TALVEZ CRIAR FUNCAO SÓ PARA PASSAR O TURNO.
 
-// RANKING LIST
+// RANKING
+
+

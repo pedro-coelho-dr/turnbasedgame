@@ -20,7 +20,7 @@ int randomInitiative() {
 
 
 // TESTES
-void printPlayer(const Player *player) {
+/* void printPlayer(const Player *player) {
     printf("Player Name: %s\n", player->name);
     printf("Current Character: %d\n", player->currentCharacter);
     printf("Switch Count: %d\n", player->switchCount);
@@ -50,7 +50,7 @@ void printCharacterList(const CharacterNode *head) {
         printf("\n");
         current = current->next;
     }
-}
+} */
 
 void vencedor(Player *winnerNode){
     clear();
@@ -69,7 +69,7 @@ void displayCredits(){
         printf("                                       - THE END - \n");
         printf("                                     TURN BASED GAME\n");
         printf("                                    POKÉMON INSPIRED\n\n");
-        printf("                                       Cesar School\n");
+        printf("                                       Cesar.School\n");
         printf("                 Projeto para a disciplina de Algoritimo e Estrutura de dados\n");
         printf("                                  Professora Natasha Targino\n");
         printf("                         Alunos: Camila Cirne e Pedro Coelho\n\n\n");

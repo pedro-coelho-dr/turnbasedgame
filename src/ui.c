@@ -215,3 +215,20 @@ void chooseCharacter(Player *player) {
     printCharacterArt(player->characters[player->currentCharacter].name);
     printf("\n\nVai! %s!\n", player->characters[player->currentCharacter].name);
 }
+
+void printCentered(char *str, int width) {
+    int len = strlen(str);
+    int spaces = (width - len) / 2;
+    int leftPadding = spaces;
+    int rightPadding = spaces + (width - len) % 2;
+
+    printf("%*s%-*s%*s", leftPadding, "", len, str, rightPadding, "");
+}
+
+
+void printCenteredNumber(int number, int width) {
+    char numStr[3];  
+    sprintf(numStr, "%d", number);
+    
+    printCentered(numStr, width);
+}

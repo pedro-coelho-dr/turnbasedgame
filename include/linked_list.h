@@ -2,6 +2,8 @@
 #define LINKED_LIST_H
 
 #include "character.h"
+
+
 typedef struct CharacterNode {
     Character character;
     struct CharacterNode *next;
@@ -17,5 +19,6 @@ typedef struct TurnNode {
 } TurnNode;
 
 TurnNode* createCircularList(Player *player1, Player *player2);
+
 
 #endif

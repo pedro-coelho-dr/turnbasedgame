@@ -31,7 +31,6 @@ int main() {
     player1.switchCount=0;
     player1.currentCharacter = -1;
     clear();
-    //displayRanking();
     printf("\n[JOGADOR 1] \n\n>>> ");
     getPlayerName(&player1);
     clear();
@@ -45,7 +44,6 @@ int main() {
     player2.switchCount=0;
     player2.currentCharacter = -1;
     clear();
-    //displayRanking();
     printf("\n[JOGADOR 2]\n\n>>> ");
     getPlayerName(&player2);
     clear();
@@ -53,6 +51,7 @@ int main() {
     selectCharacters(&player2, characterList);
     clear();
     //askInitiative(&player2);
+    
 //TESTES
     //printPlayer(&player1);
     //printPlayer(&player2);

@@ -2,40 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include "../include/ranking.h"
+#include "../include/linked_list.h"
+#include "../include/utils.h"
+#include "../include/ui.h"
 
-void printCentered(char *str, int width) {
-    int len = strlen(str);
-    int spaces = (width - len) / 2;
-    int leftPadding = spaces;
-    int rightPadding = spaces + (width - len) % 2;
-
-    printf("%*s%-*s%*s", leftPadding, "", len, str, rightPadding, "");
-}
-
-
-void printCenteredNumber(int number, int width) {
-    char numStr[3];  
-    sprintf(numStr, "%d", number);
-    
-    printCentered(numStr, width);
-}
-
-void bubbleSortv2(Ranking *rankings, int n) {
-     int k =1, troca = 1;
-    while(k <= n && troca == 1){
-        troca = 0;
-    for (int i = 0; i < n - 1; i++) {
-            if (rankings[i].totalWins < rankings[i + 1].totalWins) {
-                Ranking temp = rankings[i];
-                rankings[i] = rankings[i + 1];
-                rankings[i + 1] = temp;
-                troca = 1;
-            }
-        }
-        ++k;
-    }
-}   	
 void updateRanking(Player *winnerNode) {
     FILE *rankingFile = fopen("data/ranking.dat", "r+b");
 
@@ -43,7 +15,6 @@ void updateRanking(Player *winnerNode) {
         fprintf(stderr, "Erro ao abrir o arquivo.\n");
         return;
     }
-
     
     fseek(rankingFile, 0, SEEK_END);
     long fileSize = ftell(rankingFile);
@@ -63,14 +34,13 @@ void updateRanking(Player *winnerNode) {
     int found = 0;
     for (int i = 0; i < numElements; i++) {
         if (strcmp(rankings[i].name, winnerNode->name) == 0) {
-            rankings[i].totalWins += 1;  // Incrementa o total de vitórias
+            rankings[i].totalWins += 1;
             found = 1;
             break;
         }
     }
 
     if (!found) {
-        // Procurar um slot vazio para adicionar um novo jogador
         int emptySlot = -1;
         for (int i = 0; i < numElements; i++) {
             if (rankings[i].totalWins == 0) {
@@ -78,8 +48,6 @@ void updateRanking(Player *winnerNode) {
                 break;
             }
         }
-
-        // Se não houver slot vazio, adiciona ao final da lista
         if (emptySlot == -1) {
             emptySlot = numElements;
             numElements++;
@@ -120,7 +88,6 @@ void displayRanking() {
     rewind(rankingFile);
     int numElements = fileSize / sizeof(Ranking);
 
-    // Usar a estrutura para armazenar apenas as posições que serão exibidas
     Ranking *rankings = malloc(sizeof(Ranking) * numElements);
 
     if (rankings == NULL) {
@@ -132,7 +99,7 @@ void displayRanking() {
     fread(rankings, sizeof(Ranking), numElements, rankingFile);
     int maxPositionsToDisplay = (numElements < 10) ? numElements : 10;
 
-    int columnWidth = 50;  // Largura total da linha
+    int columnWidth = 50;
 
     printf("-------------------------------------------------------------------------------------------\n");
     printf("                                      Hall of Fame\n");
@@ -166,6 +133,21 @@ void displayRanking() {
 }
 
 
+void bubbleSortv2(Ranking *rankings, int n) {
+     int k =1, troca = 1;
+    while(k <= n && troca == 1){
+        troca = 0;
+    for (int i = 0; i < n - 1; i++) {
+            if (rankings[i].totalWins < rankings[i + 1].totalWins) {
+                Ranking temp = rankings[i];
+                rankings[i] = rankings[i + 1];
+                rankings[i + 1] = temp;
+                troca = 1;
+            }
+        }
+        ++k;
+    }
+}   	
 
 
 

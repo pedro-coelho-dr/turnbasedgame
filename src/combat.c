@@ -8,6 +8,7 @@
 #include "../include/linked_list.h"
 #include "../include/utils.h"
 #include "../include/ui.h"
+#include "../include/assets.h"
 
 /* int determineInitiative(Player *player1, Player *player2) {
     if (player1->initiativeChoice == player2->initiativeChoice) {
