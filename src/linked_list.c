@@ -68,7 +68,3 @@ TurnNode* createCircularList(Player *firstPlayer, Player *secondPlayer) {
     return player1Node;
 }
 
-
-// RANKING
-
-

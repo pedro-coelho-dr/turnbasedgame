@@ -68,6 +68,8 @@ int main() {
     } else {
         winner = startCombat(&player2, &player1);
     }
+
+    
     clear();
     updateRanking(winner); 
     vencedor(winner);
