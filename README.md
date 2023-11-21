@@ -18,8 +18,10 @@ To run it, a Makefile with commands is provided:
 ```
 make run
 ```
-*be sure to create folder and file for the ranking in the root:
+Check to create folder and file for the ranking and the build in the root:
+
 ```
+/build
 /data/ranking.dat
 ```
 <br>
