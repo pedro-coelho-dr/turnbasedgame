@@ -71,7 +71,7 @@ void displayCredits(){
         printf("                                    POKÉMON INSPIRED\n\n");
         printf("                                       Cesar.School\n");
         printf("                 Projeto para a disciplina de Algoritimo e Estrutura de dados\n");
-        printf("                                  Professora Natasha Targino\n");
+        printf("                                  Professora Natacha Targino\n");
         printf("                         Alunos: Camila Cirne e Pedro Coelho\n\n\n");
 
 }
