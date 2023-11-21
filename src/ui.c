@@ -7,6 +7,9 @@
 #include "../include/character.h"
 #include "../include/linked_list.h"
 #include "../include/utils.h"
+#include "../include/assets.h"
+#include "../include/combat.h"
+#include "../include/ranking.h"
 
 #define MAX_SWITCHES 3
 

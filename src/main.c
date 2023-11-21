@@ -10,6 +10,7 @@
 #include "../include/assets.h"
 #include "../include/utils.h"
 #include "../include/linked_list.h"
+#include "../include/ranking.h"
 
 
 int main() {

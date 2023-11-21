@@ -5,6 +5,9 @@
 #include "../include/character.h"
 #include "../include/combat.h"
 #include "../include/linked_list.h"
+#include "../include/ranking.h"
+#include "../include/ui.h"
+#include "../include/assets.h"
 
 void clear() {
     #ifdef _WIN32
