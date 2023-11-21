@@ -12,12 +12,19 @@ Due to its modularity, it´s easy to customize or create their characters and gr
 
 
 The game was developed in C (only with standard libraries), on WSL Ubuntu and MacOS enviroments with gcc compiler.<br>
-To run it, (beyond _gcc_) a Makefile with commands is provided:
+
+
+To run it, a Makefile with commands is provided:
 ```
 make run
 ```
-
+*be sure to create folder and file for the ranking in the root:
+```
+/data/ranking.dat
+```
+<br>
 The game is structured around three main cores:  <br>
+<br>
 
 **Characters: The heart of the game, where each character's design plays a role.**<br>
 
@@ -39,7 +46,7 @@ The game is structured around three main cores:  <br>
 <img width="317" alt="main_init" src="https://github.com/pedro-coelho-dr/turnbasedgame/assets/111138996/e6dbb4f6-4cb5-45ed-bb0e-ad9ad1ee3512">  <br>
 <img width="382" alt="update_ranking" src="https://github.com/pedro-coelho-dr/turnbasedgame/assets/111138996/d269d94c-7afe-49fe-a933-f77d405861dc">  <br>
 
-
+[Presentation slides](https://www.canva.com/design/DAF0t4UKpcE/PBD7UuKRhi874yX0-XWVMw/edit?utm_content=DAF0t4UKpcE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) <br>
 
 [Youtube](https://youtu.be/8PHuiFM10-w)
 
@@ -47,5 +54,5 @@ The game is structured around three main cores:  <br>
 
 Developed by:<br>
 [Pedro Coelho](https://github.com/pedro-coelho-dr) and [Camila Cirne](https://github.com/camilacirne)
-
+<br>
 Special thanks to the artists at ([asciiart.eu](https://www.asciiart.eu/video-games/pokemon)) and ([Matheus Faria](https://gist.github.com/MatheusFaria/4cbb8b6dbe33fd5605cf8b8f7130ba6d)) for their ASCII art contributions, which bring charm and nostalgia to our game.
